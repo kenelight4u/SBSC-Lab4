@@ -14,7 +14,7 @@ namespace LabFour
         public static void Calculator(int numberOfScores)
         {
             double[] MarksOfStudents = new double[numberOfScores];
-            double cgpa = 0d, total = 0d, percentage = 0d;
+            double cgpa = 0d, total = 0d, percentage = 0d, average = 0d;
 
             // getting the scores from user and storing it
             for (int i = 0; i < numberOfScores; i++)
@@ -55,11 +55,12 @@ namespace LabFour
             {
                 for (int i = 0; i < numberOfScores; i++)
                 {
-                    MarksOfStudents[i] = MarksOfStudents[i] / 10;
+                    // MarksOfStudents[i] = MarksOfStudents[i] / 10;
                     total += MarksOfStudents[i];
                 }
 
-                cgpa = total / numberOfScores;
+                average = total / numberOfScores;
+                cgpa = average / 10;
                 percentage = Math.Round(cgpa * 9.5, 2);
                 Console.WriteLine($"Your CGPA is: {cgpa}");
                 Console.WriteLine($"The Percentage is: {percentage}");

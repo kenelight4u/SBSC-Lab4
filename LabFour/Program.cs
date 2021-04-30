@@ -19,7 +19,7 @@ namespace LabFour
             // getting the scores from user and storing it
             for (int i = 0; i < numberOfScores; i++)
             {
-                Console.Write($"Enter number {i + 1} Score: ");
+                Console.Write($"Enter Score number {i + 1}: ");
                 string scoreInput = Console.ReadLine();
 
                 if (!double.TryParse(scoreInput, out MarksOfStudents[i]))

@@ -19,7 +19,7 @@ namespace LabFour
             // getting the scores from user and storing it
             for (int i = 0; i < numberOfScores; i++)
             {
-                Console.Write($"Enter Score for {i + 1}: ");
+                Console.Write($"Enter number {i + 1} Score: ");
                 string scoreInput = Console.ReadLine();
 
                 if (!double.TryParse(scoreInput, out MarksOfStudents[i]))
@@ -39,14 +39,14 @@ namespace LabFour
             }
 
             Console.WriteLine();
-            Console.WriteLine("Please check if scores are correct");
+            Console.WriteLine("Are Scores Correct? ");
             Console.WriteLine("If correct, Enter 'Yes' to continue or 'No' to start again:  ");
             string yesOrNO = Console.ReadLine().ToLower();
 
             while (yesOrNO != "yes" && yesOrNO != "no")
             {
                 Console.WriteLine("Invalid option");
-                Console.WriteLine("Please check if scores are correct");
+                Console.WriteLine("Please, Are Scores Correct? ");
                 Console.WriteLine("If correct, Enter 'Yes' to continue or 'No' to start again :");
                 yesOrNO = Console.ReadLine();
             }
@@ -62,12 +62,12 @@ namespace LabFour
                 cgpa = total / numberOfScores;
                 percentage = Math.Round(cgpa * 9.5, 2);
                 Console.WriteLine($"Your CGPA is: {cgpa}");
-                Console.WriteLine($"Your CGPA Percentage is: {percentage}");
-                Console.ReadLine();
+                Console.WriteLine($"The Percentage is: {percentage}");
+                Console.ReadKey();
             }
             else
             {
-                Console.Write("How many scores do you want to calculate: ");
+                Console.Write("Please Enter the Number of Scores: ");
                 numberOfScores = Convert.ToInt32(Console.ReadLine());
                 Calculator(numberOfScores);
             }
